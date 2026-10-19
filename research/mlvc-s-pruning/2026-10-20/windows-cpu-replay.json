@@ -1,0 +1,22 @@
+{
+  "status": "small_numeric_difference",
+  "backend": "Local Windows CPU",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.10.0+cpu",
+  "sequence": "vimeo_00021_0667",
+  "qp": 32.0,
+  "frames": 7,
+  "width": 448,
+  "height": 256,
+  "actual_stream_sha256": "a8907f31b6dedb2e9404670948635fb7d433c276374c0cf08508d69c0dcdd214",
+  "checkpoint_sha256": "dbfc41f86628a5b161b37cc1fa319734e8f518079764854ef915f9dddaa02657",
+  "cuda_decoded_sha256": "7981ed329aa39f6e701e023bc6c25b68fa6c0849a5fc7fca8fb897a099a87531",
+  "cpu_decoded_sha256": "5c9cee2946542760731d56269161123c7625751fc85783b8567fb835b880b564",
+  "max_8bit_pixel_difference": 1,
+  "mean_8bit_pixel_difference": 2.0760257227891156e-05,
+  "changed_8bit_sample_fraction": 2.0760257227891156e-05,
+  "frozen_actual_encoder_tables_sha256": "2b97e7036f3ae801d2defe12488d5a09ca3185c427113fd046019b87640be614",
+  "original_rgb_or_encoder_state_used": false,
+  "full69_pair_cpu_quality_verification": false,
+  "scope": "One real7-frame test stream replay; compatibility evidence only, not a CPU performance benchmark"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "preregistered_before_any_decoder_drift_candidate_test",
+  "protocol": "MLVCS_deployment_ltr64_idr1024_v2",
+  "purpose": "Frozen original encoder plus structurally pruned decoder; optimize recursive decoding drift under fixed teacher quantized latents, never an estimated-rate acceptance proxy",
+  "source_evidence": "Pinned DMC.decode_core and reconstruct_y_hat explicitly expose drift training. Y entropy scale indices depend on raw z_hat and fixed repeat geometry, not learned decoder context; exact entropy tables and actual EOF decoding must still be verified.",
+  "training_data": "16 GOT10k official training videos,96 frames each, chosen by fixed SHA256 video order from first2 public training archives",
+  "selection_data": "4 disjoint GOT10k official training videos,96 frames each; no MOT17 data or candidate quality used in learning or selection",
+  "teacher_qps": [12, 32, 52],
+  "rankings": "Existing v2 Taylor calibration on independent Vimeo calibration split",
+  "variants": [
+    {"scope": "main_decoder", "fraction": 0.125},
+    {"scope": "main_decoder", "fraction": 0.25},
+    {"scope": "active_decoder", "fraction": 0.125},
+    {"scope": "active_decoder", "fraction": 0.25},
+    {"scope": "active_decoder", "fraction": 0.375},
+    {"scope": "active_decoder", "fraction": 0.5}
+  ],
+  "recovery": "100 sampled96-frame video/rate iterations; truncated BPTT16, Adam3e-5, clip0.5; first25 iterations teacher-reference warmup followed by student-owned recurrence; exact teacher quantized residuals and hyperlatents",
+  "loss": "0.9 teacher-output YUV6:1:1 MSE +0.1 original-frame YUV6:1:1 MSE +0.05 teacher-feature MSE; all quantizers, encoder and entropy weights frozen",
+  "pretest_selection": "Highest decoder convolution MAC reduction satisfying all long GOT selection pairs at VMAF>=95% teacher, exact actual bytes; retain best per scope and original conservative head comparison",
+  "acceptance": "Independent fresh-process rANS decoding of the same actual baseline files; verify equal entropy tables and unchanged latent geometry, all69 held-out pairs, zero bitrate difference, no tuning after test"
+}
