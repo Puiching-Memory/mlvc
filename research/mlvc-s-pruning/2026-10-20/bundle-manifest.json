@@ -8,6 +8,11 @@
       "sha256": "e91029ba73725337ad6551ed500117d6deaeb4d13902dc2d9e839d696bc37b5a"
     },
     {
+      "path": "assemble_release.py",
+      "bytes": 2194,
+      "sha256": "f0a97cd67c094507f6baad37d4499e36d943ee316504f0da4e05f22c433e6d77"
+    },
+    {
       "path": "audit_delivered_evidence.py",
       "bytes": 6471,
       "sha256": "2cfe72d2a77070c6c844f0785455b28fa0e9122d9e14e5128765ff13ab9e379e"
@@ -22319,8 +22324,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6156,
-      "sha256": "bf1a14bbd4d579ac5bb8df4ffbd1f035b929a5e5dc9d30a3b7fd3d05980b545d"
+      "bytes": 6409,
+      "sha256": "ae30cc34a5cfd7eef981514096d1912ee4f6f41e8439f140af702e7d72c57836"
     },
     {
       "path": "redo_postprocessing.py",

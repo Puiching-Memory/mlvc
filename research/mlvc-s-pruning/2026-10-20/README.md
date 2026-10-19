@@ -15,7 +15,7 @@
 ## 文件与下载
 
 - [完整 HTML 报告](report.html)（下载后在浏览器打开）、[配置比较表](method-matrix.csv)、[逐视频结果](heldout-points.csv)、[结果摘要](results-summary.json)。
-- [模型和完整证据 Release](https://github.com/Puiching-Memory/mlvc/releases/tag/mlvc-s-pruning-20261020)：`mlvc-s-pruning-public-v2.tar.gz`、`public-bundle-receipt.json`、`SHA256SUMS`，以及两个可独立下载的推荐检查点。
+- [模型和完整证据 Release](https://github.com/Puiching-Memory/mlvc/releases/tag/mlvc-s-pruning-20261020)：完整包的 `.part-*` 分卷、`release-parts.json`、`assemble_release.py`、`public-bundle-receipt.json`、`SHA256SUMS`，以及两个可独立下载的推荐检查点。
 - Git 分支只保存代码、报告、结果表、必要审计记录。完整包包含 32 个候选检查点、训练状态、844 个去重真实码流、逐帧 VMAF JSON、冻结熵表、原始模型和固定源码归档。
 - [发布派生说明](publication-provenance.json)记录与原始交付包的关系。实验权重、实际码流、数据清单、测量 JSON 和实验源码逐字节保留；排除云账户/插件运维记录及进程日志。原始绝对实验路径用于证据追溯，可通过完整包的 `artifact-index.json` 映射。
 
@@ -33,12 +33,14 @@ H800 FP32 / PyTorch 2.8.0+cu128 / CUDA12.8，TF32 关闭。MAC 减少不等同�
 
 ## 完整包核验与重放
 
-先在任意空目录下载 Release 的完整包与回执，并取得本目录的 `verify_export.py`：
+先在任意空目录下载 Release 的全部分卷与回执（24 个分卷须全部下载；合并脚本兼容 Windows/Linux，逐卷及完整包均验证 SHA-256），并取得本目录的 `verify_export.py`：
 
 ```bash
 gh release download mlvc-s-pruning-20261020 -R Puiching-Memory/mlvc \
-  -p mlvc-s-pruning-public-v2.tar.gz -p public-bundle-receipt.json -p SHA256SUMS
+  -p "mlvc-s-pruning-public-v2.tar.gz.part-*" -p release-parts.json \
+  -p assemble_release.py -p public-bundle-receipt.json -p SHA256SUMS
 sha256sum -c SHA256SUMS --ignore-missing
+python assemble_release.py --directory .
 python verify_export.py --archive mlvc-s-pruning-public-v2.tar.gz \
   --receipt public-bundle-receipt.json --destination verified \
   --verification manifest-verification.json
