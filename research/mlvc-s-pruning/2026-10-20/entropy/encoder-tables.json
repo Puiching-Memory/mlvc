@@ -1,0 +1,42 @@
+{
+  "protocol": "MLVCS_deployment_ltr64_idr1024_v2",
+  "baseline_sha256": "1b86b757ddb115342293efb57719d6216c6ee2e459ae796ec41723b5c05ca896",
+  "file_sha256": "7b1f9c2999a1f3a800f1905297e5bfd8799078fd431b18f038dbd2e01d9d3588",
+  "pmf_tables_sha256": "2b97e7036f3ae801d2defe12488d5a09ca3185c427113fd046019b87640be614",
+  "entropy_weight_sha256": "a193c794c10716f38658a34bc98629d2e49df91877df736b4f3da80dffa23d37",
+  "source_backend": "actual H800 CUDA encoder",
+  "geometry": {
+    "y_channels": 48,
+    "z_channels": null,
+    "y_scale_repeat": 4,
+    "y_downscale_factor": 16,
+    "z_downscale_factor": 4,
+    "feature_channels": 48,
+    "force_zero_thres": null,
+    "distribution": "gaussian",
+    "scale_min": 0.11,
+    "scale_max": 16.0,
+    "scale_level": 128,
+    "scale_step_in_log_space": false,
+    "scale_input_in_index_space": true,
+    "qp_shift": [
+      0,
+      8,
+      4
+    ],
+    "frame_index_map": [
+      0,
+      1,
+      0,
+      2,
+      0,
+      2,
+      0,
+      2
+    ],
+    "scale_function_source": "cde4a912d78403733021d3db1c173a549be07f1ec70352379824468390cb840c"
+  },
+  "reason": "CPU and CUDA neural PMF generation differ; use exact original integer tables",
+  "model_weights_changed": false,
+  "coded_bytes_changed": false
+}

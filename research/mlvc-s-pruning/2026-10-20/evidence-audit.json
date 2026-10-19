@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "unique_actual_streams_fully_parsed": 69,
+  "per_frame_metric_files_recomputed": 552,
+  "candidates": [
+    {
+      "id": "head_ffn_taylor_p625_kd_seed20261019",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.9722846492507252,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "head_outer50_ffn50_kd_seed20261019",
+      "status": "not_passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.9321661137805656,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "head_ffn_taylor_p750_kd_seed20261019",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.9564795499451002,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "reconstruction_taylor_p125",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.996630961978781,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "reconstruction_taylor_p500_rd_finetune_seed20261019",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.9760105729578681,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "head_ffn_taylor_p625_kd_seed20261020",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.9706685220992625,
+      "actual_bitrate_error": 0.0
+    },
+    {
+      "id": "head_ffn_taylor_p625_kd_seed20261021",
+      "status": "passed",
+      "pairs": 69,
+      "worst_vmaf_ratio": 0.971116732831081,
+      "actual_bitrate_error": 0.0
+    }
+  ],
+  "exact_same_actual_file_bytes_verified": true,
+  "all69_pairs_per_finalist_verified": true,
+  "training_or_inference_code_imported": false,
+  "standalone_replay_receipt_verified": true
+}
