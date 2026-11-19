@@ -1,0 +1,7 @@
+# Torch is installed separately from the official CUDA wheel index.
+numpy==2.5.3
+Pillow==12.3.0
+PyYAML==6.0.3
+scipy==1.18.1
+onnx==1.23.2
+onnxruntime==1.31.0

@@ -1,0 +1,123 @@
+{
+  "backend": "x86_64 CPU FP32; no sparse kernels",
+  "hardware": [
+    "Intel(R) Xeon(R) Platinum 8458P"
+  ],
+  "logical_cpu_affinity_count": 176,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "batch_size": 1,
+  "cpu_threads": 8,
+  "sequence": "MOT17-02-FRCNN",
+  "qp": 32.0,
+  "visible_size": [
+    640,
+    360
+  ],
+  "frames_per_run": 70,
+  "rounds": 5,
+  "warmup_runs": 2,
+  "order": [
+    [
+      "baseline",
+      "head_ffn_taylor_p625_kd_seed20261019",
+      "head_ffn_taylor_p750_kd_seed20261019"
+    ],
+    [
+      "baseline",
+      "head_ffn_taylor_p750_kd_seed20261019",
+      "head_ffn_taylor_p625_kd_seed20261019"
+    ],
+    [
+      "head_ffn_taylor_p750_kd_seed20261019",
+      "baseline",
+      "head_ffn_taylor_p625_kd_seed20261019"
+    ],
+    [
+      "head_ffn_taylor_p750_kd_seed20261019",
+      "head_ffn_taylor_p625_kd_seed20261019",
+      "baseline"
+    ],
+    [
+      "head_ffn_taylor_p625_kd_seed20261019",
+      "head_ffn_taylor_p750_kd_seed20261019",
+      "baseline"
+    ]
+  ],
+  "interval_includes": "rANS CPU entropy decode, tensor transfers, context, recurrent feature and reconstruction inference; input payloads already in RAM",
+  "interval_excludes": "model loading, file IO, metric computation, output pixel transfers",
+  "stream_sha256": "78627937fe2ef6433fd5f2636ac361ef64c2a8625175767e9287d6462d3cb8b8",
+  "results": {
+    "baseline": {
+      "median_seconds": 5.313581235241145,
+      "median_ms_per_frame": 75.90830336058778,
+      "median_fps": 13.173789371232452,
+      "min_seconds": 5.244592139963061,
+      "max_seconds": 5.5052882940508425,
+      "runs_seconds": [
+        5.245165499392897,
+        5.244592139963061,
+        5.313581235241145,
+        5.5052882940508425,
+        5.404578513931483
+      ]
+    },
+    "head_ffn_taylor_p625_kd_seed20261019": {
+      "median_seconds": 4.138586735818535,
+      "median_ms_per_frame": 59.122667654550504,
+      "median_fps": 16.913986456817682,
+      "min_seconds": 3.7373467688448727,
+      "max_seconds": 4.437894272617996,
+      "runs_seconds": [
+        4.437894272617996,
+        4.138586735818535,
+        4.431599861942232,
+        3.7373467688448727,
+        4.04851748701185
+      ],
+      "speedup_vs_baseline": 1.28391201500099,
+      "latency_reduction": 0.22113042925357385
+    },
+    "head_ffn_taylor_p750_kd_seed20261019": {
+      "median_seconds": 4.287222764920443,
+      "median_ms_per_frame": 61.246039498863475,
+      "median_fps": 16.32758637427579,
+      "min_seconds": 3.829068649094552,
+      "max_seconds": 4.624656920786947,
+      "runs_seconds": [
+        4.329604914877564,
+        3.976508190855384,
+        3.829068649094552,
+        4.287222764920443,
+        4.624656920786947
+      ],
+      "speedup_vs_baseline": 1.239399379644726,
+      "latency_reduction": 0.19315757581978943
+    }
+  },
+  "cpu_arm_mobile_latency_verified": false,
+  "x86_cpu_latency_verified": true,
+  "arm_mobile_latency_verified": false,
+  "final_output_sum_sanity": {
+    "baseline": 304159.0,
+    "head_ffn_taylor_p625_kd_seed20261019": 304086.125,
+    "head_ffn_taylor_p750_kd_seed20261019": 304094.25
+  },
+  "source_hashes_at_start_and_finish": {
+    "benchmark_decoder.py": "6748e1165f0f0aef15f7e2f82be2e011df1eff5ba72910ff0af27c31d904da08",
+    "experiment_runtime.py": "48f82194913a22a2c3e74c5c6781e20be70812e43877687d7ad00e3f00e63f39",
+    "final_validation.py": "37d275496efc49d2695a80505608696613fce413dfd0b08bcbc4a616b96a2eaf",
+    "entropy_tables.py": "f73dd7cebac0917b0856926c0f411ba090e3aa5d17d4ed8a374e937409b318ae"
+  },
+  "benchmark_source_sha256": "6748e1165f0f0aef15f7e2f82be2e011df1eff5ba72910ff0af27c31d904da08",
+  "entropy_table_compatibility": {
+    "status": "passed",
+    "cpu_entropy_tables_and_geometry_match_cuda_encoder": true,
+    "native_cpu_tables_identical_to_cuda": false,
+    "native_cpu_tables_sha256": "91d9d93b4609e464cd113baea46ca602e0f21dfde8dd28a8de8b51ecb7c31f20",
+    "frozen_actual_encoder_tables_installed": true,
+    "pmf_tables_sha256": "2b97e7036f3ae801d2defe12488d5a09ca3185c427113fd046019b87640be614",
+    "full69_pair_cpu_vmaf_confirmation_performed": false
+  },
+  "full69_pair_cpu_vmaf_confirmation_performed": false
+}

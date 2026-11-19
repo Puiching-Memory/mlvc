@@ -1,0 +1,30 @@
+{
+  "invalid_native_cpu_timing_quarantined": true,
+  "files": [
+    "export-v2",
+    "mlvc-s-pruning-results-v2.tar.gz",
+    "export-receipt.json",
+    "results/decoder-benchmark-cpu.json",
+    "results/decoder-benchmark-combined.json",
+    "logs/benchmark-cpu-v2.log",
+    "logs/benchmark-cpu-v2.command",
+    "logs/benchmark-cpu-v2.pid",
+    "logs/benchmark-cpu-v2.exitcode",
+    "logs/benchmark-combined-v2.log",
+    "logs/benchmark-combined-v2.exitcode",
+    "logs/benchmark-combined-v2.command",
+    "logs/benchmark-combined-v2.pid",
+    "logs/finish-v2.log",
+    "logs/finish-v2.command",
+    "logs/finish-v2.exitcode",
+    "logs/finish-v2.pid",
+    "logs/export-v2.pid",
+    "logs/export-v2.exitcode",
+    "logs/export-v2.log",
+    "logs/export-v2.command"
+  ],
+  "reason": "CPU/CUDA build different integer entropy tables; older queued CPU process loaded code before new guard was added. Reject old CPU timings and interim bundle.",
+  "resolution": "Freeze actual CUDA encoder integer tables, verify SHA256 and neural entropy weights/geometry, install identical tables for CPU; rerun all final timing from fresh immutable sources.",
+  "gpu_vmaf_confirmation_unchanged": true,
+  "gpu_encoded_bytes_unchanged": true
+}
