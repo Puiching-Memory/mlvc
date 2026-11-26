@@ -1,0 +1,21 @@
+{
+  "actual_source_fa_indices_checked": 2050,
+  "baseline_checkpoint_unchanged": true,
+  "corrected_protocol": "MLVCS_deployment_ltr64_idr1024_v2",
+  "rans_encode_decode_error": 0.0,
+  "omitted_or_mismatched_details": [
+    "Proactive long-term reference recovery: mark frame8 then every64, reuse previous LTR",
+    "Deployment frame-type index uses (frame_index+1) mod8",
+    "Deployment chroma upsampling uses nearest repeat, not bilinear",
+    "IDR reset every1024 frames"
+  ],
+  "remote_archive": "results-protocol-v1",
+  "diagnostic_comparison": "Combined implementation correction at same QP; not a pruning gain or isolated LTR ablation",
+  "rerun_policy": "Recompute calibration, screening and all recovery under v2; no reuse of old quality measurements or trained checkpoints.",
+  "test_use_boundary": "Baseline MOT17 protocol QA only; no MOT candidate score, frame or gradient used for pruning/training/model selection. Final checkpoints selected from disjoint Vimeo selection data.",
+  "invalidated_v1_mot02_q32_vmaf": 13.43228,
+  "corrected_v2_mot02_q32_vmaf": 74.001194,
+  "original_source_revision": "64b10d4c0108106e66b7c54d6e5e470200a57abf",
+  "actual_rans_ltr_regression_frames": 70,
+  "status": "v1_results_invalid_for_final_acceptance"
+}

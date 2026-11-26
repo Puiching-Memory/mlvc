@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "compact_decoder_with_original_entropy_is_compatible",
+    "json_roundtrip",
+    "encoder_change_rejected",
+    "quantizer_change_rejected",
+    "entropy_change_rejected",
+    "geometry_change_rejected"
+  ],
+  "backend": "CPU guard tests only",
+  "real_gpu_rans_and_vmaf_tests_still_required": true
+}
